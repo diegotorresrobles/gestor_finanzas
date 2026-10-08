@@ -1,0 +1,8 @@
+[build]
+  base = "frontend"
+  command = "node ../deploy/prepare-netlify.mjs && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  VITE_API_URL = ""

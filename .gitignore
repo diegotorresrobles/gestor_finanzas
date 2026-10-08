@@ -1,0 +1,9 @@
+**/node_modules/
+**/vendor/
+**/.env
+**/.env.*
+**/dist/
+backend/runtime/
+deploy/generated/
+frontend/public/_redirects
+*.log

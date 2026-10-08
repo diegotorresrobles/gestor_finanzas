@@ -1,0 +1,4 @@
+deploy/*.sh text eol=lf
+deploy/*.php text eol=lf
+deploy/*.yaml text eol=lf
+deploy/*.sql text eol=lf

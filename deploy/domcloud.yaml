@@ -1,0 +1,17 @@
+# Primera instalación en un sitio vacío. Sustituye ambos valores antes de ejecutar.
+# source reemplaza public_html: NO reutilizar para actualizar un sitio con .env.
+source: https://github.com/TU_USUARIO/TU_REPOSITORIO
+features:
+  - php 8.3
+  - mysql
+  - ssl always
+  - root public_html/backend/public
+nginx:
+  fastcgi: on
+  locations:
+    - match: /
+      try_files: $uri $uri/ /index.php$is_args$args
+commands:
+  - (cd backend && composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction)
+  - FRONTEND_URL=https://TU_SITIO.netlify.app php deploy/configure-backend.php
+  - php deploy/install-database.php
